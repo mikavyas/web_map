@@ -1,9 +1,11 @@
-'use strict'  // execute in strict mode
+'use strict'        // let the browser know we're serious
 
-console.log("Loaded map.js")
+// debug statement letting us know the file is loaded
+console.log('Loaded map.js')
 
 // your mapbox token
 mapboxgl.accessToken = 'pk.eyJ1IjoibWlrYXZ5YXMiLCJhIjoiY2xoczhzOTUzMHpreTNlbjAweXJ3OWRxMyJ9.W3Lh5-pynBUC4YNHA3vQkg'
+
 
 var map = new mapboxgl.Map({
     container: 'map',
