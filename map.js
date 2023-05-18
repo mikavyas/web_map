@@ -20,10 +20,32 @@ var bounds = [
     ];
 
 map.setMaxBounds(bounds);
-    map.on('drag', function() {
-      if (map.getCenter().lng < bounds[0][0] || map.getCenter().lng > bounds[1][0] || map.getCenter().lat < bounds[0][1] || map.getCenter().lat > bounds[1][1]) {
-        map.panInsideBounds(bounds, { animate: false });
-      }
-    });
 
-    map.addControl(new mapboxgl.NavigationControl());
+map.on('drag', function() {
+  if (map.getCenter().lng < bounds[0][0] || map.getCenter().lng > bounds[1][0] || map.getCenter().lat < bounds[0][1] || map.getCenter().lat > bounds[1][1]) {
+    map.panInsideBounds(bounds, { animate: false });
+  }
+});
+
+map.addControl(new mapboxgl.NavigationControl());
+
+map.on('load', function() {
+  // Define a 'source' for your point dataset
+  map.addSource('fuel_data', {
+    'type': 'geojson',
+    'data': './data/alt_fuel_stations.geojson'
+  });
+
+  // Add a new layer with your points
+  map.addLayer({
+    'id': 'Station Names',
+    'type': 'circle',
+    'source': 'fuel_data',
+    'paint': {
+      'circle-radius': 4,
+      'circle-color': '#349f27',
+      'circle-opacity': 0.7
+    }
+  });
+});
+
