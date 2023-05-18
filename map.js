@@ -10,6 +10,20 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibWlrYXZ5YXMiLCJhIjoiY2xoczhzOTUzMHpreTNlbjAwe
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
-    center: [-73.93324, 40.80877],
+    center: [-85.3232, 49.0467],
     zoom: 14
 });
+
+var bounds = [
+      [-95.15625, 41.77131], // Southwest coordinates of the bounding box
+      [-74.64453, 56.65623] // Northeast coordinates of the bounding box
+    ];
+
+map.setMaxBounds(bounds);
+    map.on('drag', function() {
+      if (map.getCenter().lng < bounds[0][0] || map.getCenter().lng > bounds[1][0] || map.getCenter().lat < bounds[0][1] || map.getCenter().lat > bounds[1][1]) {
+        map.panInsideBounds(bounds, { animate: false });
+      }
+    });
+
+    map.addControl(new mapboxgl.NavigationControl());
