@@ -38,7 +38,7 @@ map.on('load', function() {
 
   // Add a new layer with your points
   map.addLayer({
-    'id': 'Station Names',
+    'id': 'Station Name',
     'type': 'circle',
     'source': 'fuel_data',
     'paint': {
