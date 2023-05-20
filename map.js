@@ -6,13 +6,24 @@ console.log('Loaded map.js')
 // your mapbox token
 mapboxgl.accessToken = 'pk.eyJ1IjoibWlrYXZ5YXMiLCJhIjoiY2xoczhzOTUzMHpreTNlbjAweXJ3OWRxMyJ9.W3Lh5-pynBUC4YNHA3vQkg'
 
-
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
     center: [-85.3232, 49.0467],
     zoom: 14
 });
+
+var markerElement = document.createElement('div');
+markerElement.className = 'marker';
+
+// Create a popup element
+var popup = new mapboxgl.Popup({ offset: 25 }).setText('EV Distribution in Ontario');
+
+// Add a marker to the map
+var marker = new mapboxgl.Marker(markerElement)
+    .setLngLat([-85.3232, 49.0467]) // Replace longitude and latitude with the coordinates of your marker's location
+    .setPopup(popup)
+    .addTo(map);
 
 var bounds = [
       [-95.15625, 41.77131], // Southwest coordinates of the bounding box
