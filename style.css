@@ -29,7 +29,7 @@ body, html {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(50%, 50%);
+    transform: translate(-50%, -50%);
     background-color: #349f27;
     color: #fff;
     padding: 5px 10px;
