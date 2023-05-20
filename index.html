@@ -7,7 +7,7 @@
     <meta charset='utf-8' />    
 
     <!-- the title of the page which will show up in the browser bar -->
-    <title>Map Test</title>     
+    <title>EV Locations in Ontario</title>     
 
     <!-- discourage the browser from caching the page -->    
     <meta http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate' />
@@ -20,6 +20,29 @@
     <!-- stylesheet links -->
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />     
     <link href='style.css' rel='stylesheet' />
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+     .marker {
+  background-image: url('mapbox-icon.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 
     <!-- javascript links -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
