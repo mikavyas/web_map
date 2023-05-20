@@ -27,11 +27,12 @@ body, html {
 
 .label {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 5px 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #349f27;
     color: #fff;
+    padding: 5px 10px;
     border-radius: 4px;
     font-size: 14px;
-  }
+}
