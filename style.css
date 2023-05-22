@@ -26,14 +26,12 @@ body, html {
 }
 
 .label {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
     background-color: #349f27;
     color: #fff;
-    padding: 5px 10px;
     border-radius: 4px;
     font-size: 14px;
-    z-index: 1;
-}
+  }
